@@ -1,0 +1,19 @@
+body {
+}
+
+.header {
+    text-align: center;
+}
+
+.header h2 {
+    border-bottom: 1px solid gray;
+}
+
+.form-body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button-large {
+    font-size: 110%;
+}
