@@ -1,0 +1,7 @@
+<?php
+
+class Config {
+  const DB_NAME = 'database';
+  const DB_USER_NAME = 'username';
+  const DB_PASSWORD = 'password';
+}
