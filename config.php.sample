@@ -4,4 +4,7 @@ class Config {
   const DB_NAME = 'database';
   const DB_USER_NAME = 'username';
   const DB_PASSWORD = 'password';
+
+  const NO_OK_REDIRECT_PATH = '/q/';
+  const SUCCESS_REDIRECT_PATH = '/q/success.html';
 }
