@@ -1,4 +1,7 @@
+@import url(fonts/thsarabunnew.css);
+
 body {
+    font-family: 'THSarabunNew', sans-serif;
 }
 
 .header {
@@ -8,12 +11,12 @@ body {
     color: white;
 }
 
-.header h1 {
-    margin: 0px;
+.pure-g [class*="pure-u"] {
+    font-family: 'THSarabunNew', sans-serif;
 }
 
-.header h2 {
-    border-bottom: 1px solid gray;
+.header h1 {
+    margin: 0px;
 }
 
 .form-body {

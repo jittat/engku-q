@@ -5,6 +5,7 @@
   <title>ยินดีต้อนรับสู่คณะวิศวกรรมศาสตร์ ม.เกษตรศาสตร์ บางเขน</title>
   <link rel="stylesheet" href="css/pure/pure-min.css">
   <link rel="stylesheet" href="css/base.css">
+  <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
   <div class="header">
@@ -18,13 +19,17 @@
         <fieldset>
           <legend>ชื่อ-นามสกุล</legend>
 
+          <div id="name_error_id" style="color: white; background: #DD514C; display: none; border-radius: 3px; margin-bottom: 5px; padding: 3px">
+            <b>* ไม่สามารถจัดเก็บข้อมูลได้</b> เนื่องจากไม่มีชื่อหรือนามสกุล กรุณาป้อนข้อมูล
+          </div>
+
           <select name="gender" id="gender_id">
             <option value="นาย">นาย</option>
             <option value="น.ส.">น.ส.</option>
           </select>
           
-          <input type="text" placeholder="ชื่อ" name="first_name">
-          <input type="text" placeholder="นามสกุล" name="last_name">
+          <input type="text" placeholder="ชื่อ" name="first_name" id="first_name_id">
+          <input type="text" placeholder="นามสกุล" name="last_name" id="last_name_id">
         </fieldset>
         <fieldset>
           <legend>การปฐมนิเทศนิสิตใหม่ วันที่ 17 ส.ค. 2557</legend>
@@ -45,20 +50,33 @@
         <fieldset>
           <legend>กิจกรรมที่จัดโดยคณะที่คุณเคยเข้าร่วม</legend>
           <label for="option-camp1" class="pure-checkbox">
-            <input id="option-camp1" type="checkbox" value="">
+            <input id="option-camp1" name="camps[]" type="checkbox" value="dongtan">
             ดงตาลแคมป์
           </label>
           <label for="option-camp2" class="pure-checkbox">
-            <input id="option-camp2" type="checkbox" value="">
+            <input id="option-camp2" name="camps[]" type="checkbox" value="toffee">
             Toffee camp
           </label>
         </fieldset>
 
-        <input type="submit" name="ok" class="pure-button pure-button-primary button-large" value="ส่งข้อมูลแบบสอบถามและเข้าเว็บระบบฐานข้อมูลนิสิต">
+        <input type="submit" id="form_submit_id" name="ok" class="pure-button pure-button-primary button-large" value="ส่งข้อมูลแบบสอบถามและเข้าเว็บระบบฐานข้อมูลนิสิต">
         <input type="submit" name="cancel" class="pure-button button-large" value="เข้าเว็บระบบฐานข้อมูลนิสิต">
       </form>
     </div>
     <div class="pure-u-1-12"></div>
   </div>
 </body>
+<script>
+ $(function() {
+   $( "#form_submit_id" ).click(function() {
+     var first_name = $.trim( $( "#first_name_id" ).val());
+     var last_name = $.trim( $( "#last_name_id" ).val());
+     if ( ( first_name == '' ) || ( last_name == '' ) ) {
+       $("#name_error_id").slideDown();
+       return false;
+     }
+     return true;
+   });
+ });
+</script>
 </html>
