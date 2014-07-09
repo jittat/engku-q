@@ -7,4 +7,13 @@ class Config {
 
   const NO_OK_REDIRECT_PATH = '/q/';
   const SUCCESS_REDIRECT_PATH = '/q/success.html';
+
+  const REPORT_KEY = '';
+  
+  static $REPORT_FIELDS = array('gender' => 'string',
+                                'first_name' => 'string',
+                                'last_name' => 'string',
+                                'is_attending_orientation' => 'integer',
+                                'is_parents_attending' => 'integer',
+                                'camps' => 'strarray');
 }
